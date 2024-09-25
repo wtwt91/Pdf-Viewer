@@ -133,14 +133,26 @@ dependencies {
 //   }
 //}
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            from(components["release"])
-        }
-    }
-    repositories {
-        maven {
+//publishing {
+//
+//    repositories {
+//
+//    }
+//}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+//            release(MavenPublication) {
+//                // Applies the component for the release build variant.
+//                from components.release
+//
+//                        // You can then customize attributes of the publication as shown below.
+//                        groupId = 'com.bks.compose.circularprogressview'
+//                artifactId = 'circular-progress-view'
+//                version = '1.0.0'
+//            }
         }
     }
 }
