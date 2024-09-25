@@ -6,7 +6,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
     id("org.jetbrains.dokka") version "1.9.20"
-    id("com.vanniktech.maven.publish") version "0.28.0"
+//    id("com.vanniktech.maven.publish") version "0.28.0"
+    id("maven-publish")
 }
 
 android {
@@ -80,43 +81,66 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.8.2")
 }
 
-mavenPublishing {
-    configure(
-        AndroidSingleVariantLibrary(
-            // the published variant
-            variant = "release",
-            // whether to publish a sources jar
-            sourcesJar = true,
-        )
-    )
+//mavenPublishing {
+//    configure(
+//        AndroidSingleVariantLibrary(
+//            // the published variant
+//            variant = "release",
+//            // whether to publish a sources jar
+//            sourcesJar = true,
+//        )
+//    )
+//
+//    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+//    signAllPublications()
+//
+//    coordinates("io.github.afreakyelf", "Pdf-Viewer", "1.0")
+//
+//    pom {
+//        name.set("PDF Viewer")
+//        description.set("A PDF viewing library for Android")
+//        url.set("https://github.com/wtwt91/Pdf-Viewer")
+//        licenses {
+//            license {
+//                name.set("MIT License")
+//                url.set("https://opensource.org/licenses/MIT")
+//            }
+//        }
+//        developers {
+//            developer {
+//                id.set("afreakyelf")
+//                name.set("Rajat Mittal")
+//                email.set("rjmittal07@gmail.com")
+//            }
+//        }
+//        scm {
+//            connection.set("scm:git:git://github.com/wtwt91/Pdf-Viewer.git")
+//            developerConnection.set("scm:git:ssh://github.com/wtwt91/Pdf-Viewer.git")
+//            url.set("https://github.com/wtwt91/Pdf-Viewer")
+//        }
+//    }
+//   publishing {
+//       publications {
+//           create<MavenPublication>("maven") {
+//               from(components["release"])
+//           }
+//       }
+//       repositories {
+//           maven {
+//               // 这里通常不需要设置具体的仓库地址，因为 JitPack 会处理发布逻辑
+//           }
+//       }
+//   }
+//}
 
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
-    signAllPublications()
-
-    coordinates("io.github.afreakyelf", "Pdf-Viewer", "1.0")
-
-    pom {
-        name.set("PDF Viewer")
-        description.set("A PDF viewing library for Android")
-        url.set("https://github.com/wtwt91/Pdf-Viewer")
-        licenses {
-            license {
-                name.set("MIT License")
-                url.set("https://opensource.org/licenses/MIT")
-            }
-        }
-        developers {
-            developer {
-                id.set("afreakyelf")
-                name.set("Rajat Mittal")
-                email.set("rjmittal07@gmail.com")
-            }
-        }
-        scm {
-            connection.set("scm:git:git://github.com/wtwt91/Pdf-Viewer.git")
-            developerConnection.set("scm:git:ssh://github.com/wtwt91/Pdf-Viewer.git")
-            url.set("https://github.com/wtwt91/Pdf-Viewer")
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["release"])
         }
     }
-
+    repositories {
+        maven {
+        }
+    }
 }
