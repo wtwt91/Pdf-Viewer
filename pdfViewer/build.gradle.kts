@@ -1,5 +1,5 @@
-import com.vanniktech.maven.publish.AndroidSingleVariantLibrary
-import com.vanniktech.maven.publish.SonatypeHost
+//import com.vanniktech.maven.publish.AndroidSingleVariantLibrary
+//import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
     id("com.android.library")
