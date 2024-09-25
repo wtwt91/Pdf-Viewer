@@ -93,12 +93,12 @@ mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
 
-    coordinates("io.github.afreakyelf", "Pdf-Viewer", "2.1.1")
+    coordinates("io.github.afreakyelf", "Pdf-Viewer", "1.0")
 
     pom {
         name.set("PDF Viewer")
         description.set("A PDF viewing library for Android")
-        url.set("https://github.com/afreakyelf/pdfviewer")
+        url.set("https://github.com/wtwt91/Pdf-Viewer")
         licenses {
             license {
                 name.set("MIT License")
@@ -113,9 +113,9 @@ mavenPublishing {
             }
         }
         scm {
-            connection.set("scm:git:git://github.com/afreakyelf/pdfviewer.git")
-            developerConnection.set("scm:git:ssh://github.com/afreakyelf/pdfviewer.git")
-            url.set("https://github.com/afreakyelf/pdfviewer")
+            connection.set("scm:git:git://github.com/wtwt91/Pdf-Viewer.git")
+            developerConnection.set("scm:git:ssh://github.com/wtwt91/Pdf-Viewer.git")
+            url.set("https://github.com/wtwt91/Pdf-Viewer")
         }
     }
 
