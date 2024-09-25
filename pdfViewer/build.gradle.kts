@@ -133,26 +133,42 @@ dependencies {
 //   }
 //}
 
-//publishing {
-//
-//    repositories {
-//
-//    }
-//}
-
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-//            release(MavenPublication) {
-//                // Applies the component for the release build variant.
-//                from components.release
-//
-//                        // You can then customize attributes of the publication as shown below.
-//                        groupId = 'com.bks.compose.circularprogressview'
-//                artifactId = 'circular-progress-view'
-//                version = '1.0.0'
-//            }
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.rajat.pdfviewer"
+            artifactId = "pdfviewer"
+            version = "1.0.0"
+            afterEvaluate {
+                from(components["release"])
+            }
         }
     }
 }
+
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            register<MavenPublication>("release") {
+//                groupId = "com.rajat.pdfviewer"
+//                artifactId = "pdfviewer"
+//                version = "1.0.0"
+//
+//                afterEvaluate {
+//                    from(components["release"])
+//                }
+//            }
+//
+//            // Creates a Maven publication called "release".
+////            release(MavenPublication) {
+////                // Applies the component for the release build variant.
+////                from components.release
+////
+////                        // You can then customize attributes of the publication as shown below.
+////                        groupId = 'com.bks.compose.circularprogressview'
+////                artifactId = 'circular-progress-view'
+////                version = '1.0.0'
+////            }
+//        }
+//    }
+//}
